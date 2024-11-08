@@ -4,7 +4,7 @@ pipeline {
     environment {
         PATH = "/usr/local/bin:${env.PATH}" // Adjust if necessary
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials' // Replace with your Docker Hub credentials ID
-        DOCKER_USERNAME = 'arunsdhamodhar' // Replace with your Docker Hub username
+        DOCKER_USERNAME = 'avinash73' // Replace with your Docker Hub username
     }
 
     tools {
@@ -72,7 +72,7 @@ pipeline {
                             echo "Removing existing microservices-deployment directory..."
                             rm -rf microservices-deployment
                         fi
-                        git clone https://github.com/ArunSDhamodhar/microservices-deployment.git
+                        git clone https://github.com/https://github.com/iavinash73/microservices-deployment.git
                     ''' // Clone the deployment repo
 
                     dir('microservices-deployment') { // Change directory to the cloned repo
