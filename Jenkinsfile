@@ -72,7 +72,7 @@ pipeline {
                             echo "Removing existing microservices-deployment directory..."
                             rm -rf microservices-deployment
                         fi
-                        git clone https://github.com/https://github.com/iavinash73/microservices-deployment.git
+                        git clone https://github.com/iavinash73/microservices-deployment.git
                     ''' // Clone the deployment repo
 
                     dir('microservices-deployment') { // Change directory to the cloned repo
@@ -88,14 +88,8 @@ pipeline {
     post {
         always {
             script {
-                echo "Tearing down services..."
-                if (fileExists('microservices-deployment/docker-compose.yml')) { // Check if docker-compose.yml exists
-                    dir('microservices-deployment') { // Change to the correct directory
-                        sh 'docker-compose down' // Stop and remove containers defined in the Compose file
-                    }
-                } else {
-                    echo "Warning: docker-compose.yml not found in 'microservices-deployment'. Skipping teardown."
-                }
+                echo "Post-build actions can be added here if needed."
+                // Teardown step has been removed.
             }
         }
     } // End of post actions
